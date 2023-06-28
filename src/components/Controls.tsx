@@ -1,9 +1,9 @@
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import PropTypes from "prop-types";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
+import { ControlsProps } from "types";
 
-const Controls = ({ userId, handlePosts, handleAlbums }) => {
+const Controls: FC<ControlsProps> = ({ userId, handlePosts, handleAlbums }) => {
     return (
         <Stack direction="row" spacing={1}>
             <Button variant="contained" size="small" onClick={() => handlePosts(userId)}>
@@ -18,9 +18,3 @@ const Controls = ({ userId, handlePosts, handleAlbums }) => {
 };
 
 export default memo(Controls);
-
-Controls.propTypes = {
-    userId: PropTypes.number.isRequired,
-    handlePosts: PropTypes.func.isRequired,
-    handleAlbums: PropTypes.func.isRequired,
-};

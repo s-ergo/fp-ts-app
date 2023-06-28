@@ -14,7 +14,7 @@ const App = () => {
             <Container sx={{ p: 3 }} maxWidth={false}>
                 <Routes>
                     <Route index element={<HomePage />} />
-                    <Route path={FrontendRoutes.POST_PAGE()} element={<PostPage />} />
+                    <Route path={FrontendRoutes.POST_PAGE(":userId")} element={<PostPage />} />
                 </Routes>
             </Container>
         </>

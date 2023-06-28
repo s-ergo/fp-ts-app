@@ -1,9 +1,9 @@
 import { List, ListItem, ListItemText } from "@mui/material";
-import PropTypes from "prop-types";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
+import { ItemListProps } from "types";
 import Controls from "./Controls";
 
-const ItemsList = ({ items, action, handlePosts, handleAlbums }) => {
+const ItemsList: FC<ItemListProps> = ({ items, action, handlePosts, handleAlbums }) => {
     const actionObj = {
         users: ["name", "email"],
         posts: ["title", "body"],
@@ -29,10 +29,3 @@ const ItemsList = ({ items, action, handlePosts, handleAlbums }) => {
 };
 
 export default memo(ItemsList);
-
-ItemsList.propTypes = {
-    action: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    handlePosts: PropTypes.func,
-    handleAlbums: PropTypes.func,
-};
