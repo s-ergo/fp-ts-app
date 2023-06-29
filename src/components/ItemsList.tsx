@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemText } from "@mui/material";
 import React, { FC, memo } from "react";
-import { ItemListProps } from "types";
+import { Album, ItemListProps, User } from "types";
 import Controls from "./Controls";
 
 const ItemsList: FC<ItemListProps> = ({ items, action, handlePosts, handleAlbums }) => {
@@ -12,7 +12,7 @@ const ItemsList: FC<ItemListProps> = ({ items, action, handlePosts, handleAlbums
 
     return (
         <List>
-            {items?.map((item) => (
+            {items?.map((item: User | Album) => (
                 <ListItem
                     key={item.id}
                     sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", mt: 2 }}

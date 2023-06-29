@@ -1,4 +1,10 @@
-# Test React App
+# FR-TS React App
+
+## Technology
+
+`fp-ts` - [library for typed functional programming in TypeScript](https://github.com/gcanti/fp-ts)
+
+## Description
 
 API: https://jsonplaceholder.typicode.com
 
