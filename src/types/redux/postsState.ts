@@ -4,7 +4,4 @@ export type Post = {
     title: string;
     userId: number;
   };
-
-export interface PostsState {
-    list: Post[];
-}
+  

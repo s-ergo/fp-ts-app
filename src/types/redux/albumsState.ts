@@ -3,7 +3,3 @@ export type Album = {
   id: number;
   title: string;
 };
-
-export interface AlbumsState {
-  list: Album[];
-}

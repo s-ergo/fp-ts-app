@@ -21,8 +21,3 @@ export type User = {
         bs: string;
     };
 }
-
-export interface UsersState {
-    userId: number;
-    list: User[];
-}
