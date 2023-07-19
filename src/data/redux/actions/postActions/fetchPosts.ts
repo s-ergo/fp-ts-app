@@ -1,17 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import * as A from "fp-ts/Array";
-import * as T from "fp-ts/Task";
-import * as TE from "fp-ts/TaskEither";
-import { pipe } from "fp-ts/function";
+import { fetchData } from "utils";
 
-export const fetchPosts = createAsyncThunk("get/postsList", async (userId: string) => {
-    return pipe(
-        TE.tryCatch(
-            () => axios.get(`/posts?userId=${userId}`),
-            (error) => new Error(String(error))
-        ),
-        TE.chain(res => A.isNonEmpty(res.data) ? TE.right(res.data) : TE.left(new Error("Empty array"))),
-        TE.getOrElse(() => T.of([]))
-    )();
-});
+export const fetchPosts = createAsyncThunk(
+    "get/postsList",
+    async (userId: string) => await fetchData(`/posts?userId=${userId}`)
+);

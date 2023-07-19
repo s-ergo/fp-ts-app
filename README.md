@@ -2,11 +2,10 @@
 
 ## Technology
 
-`fp-ts` [is a library for typed functional programming in TypeScript](https://github.com/gcanti/fp-ts)
+* [fp-ts](https://github.com/gcanti/fp-ts)
+* [api](https://jsonplaceholder.typicode.com)
 
 ## Description
-
-API: https://jsonplaceholder.typicode.com
 
 Fetch a list of users using the /users endpoint.
 

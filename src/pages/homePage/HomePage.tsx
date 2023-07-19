@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import * as A from "fp-ts/Array";
 import { flow } from "fp-ts/function";
 import React, { memo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,7 +25,7 @@ const HomePage = () => {
         <>
             <Button variant="contained" onClick={() => dispatch(fetchUsers())}>Fetch users</Button>
             <ItemsList items={users} action="users" handlePosts={handlePosts} handleAlbums={handleAlbums} />
-            <ModalList open={open} setOpen={setOpen} albums={albums} />
+            {A.isNonEmpty(albums) && <ModalList open={open} setOpen={setOpen} albums={albums} />}
         </>
     );
 };
